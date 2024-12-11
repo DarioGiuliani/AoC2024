@@ -2,7 +2,7 @@ from classes.report import Report
 from utils.filereader import FileReader
 
 #set up file reader and get input
-input = FileReader.readfile("daytwopartone.txt")
+input = FileReader.readfile("daytwoparttwo.txt")
 
 #sanitize input
 cleaned_input = []
@@ -13,9 +13,9 @@ for line in input:
 amount_of_safe_reports = 0
 report = Report()
 
-#loop over input and check if reports are safe or unsafe
+#loop over input and check if reports are safe or unsafe ignoring one level
 for element in cleaned_input:
-    if report.is_safe(element, 1, 3):
+    if report.is_safe_ignoring_one_level(element, 1, 3):
         amount_of_safe_reports += 1
 
 print(amount_of_safe_reports)
